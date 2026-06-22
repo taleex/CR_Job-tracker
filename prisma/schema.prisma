@@ -11,3 +11,32 @@ generator client {
 datasource db {
   provider = "sqlite"
 }
+
+// user schema
+model User {
+  id    Int     @id @default(autoincrement())
+  jobs JobItem[]
+  name  String
+  email String  @unique
+  passwordHashed String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Job Schema
+model JobItem {
+  id  Int @id @default(autoincrement())
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  companyName String
+  companyLogo String
+  position String
+  description String
+  salary Float
+  tags String
+  status String @default("APPLIED")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  }
+
+ 
