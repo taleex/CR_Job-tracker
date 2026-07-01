@@ -3,13 +3,13 @@ import NavBar from "../components/HomePage/navBarSection/navBar";
 
 export default function Auth({children}: {children: React.ReactNode }) {
   return (
-    <div>
+    <main>
       <NavBar />
-      <div className="flex gap-4 justify-between p-16">
+      <section className="flex gap-4 justify-between p-16">
         <img src="https://placehold.net/400x400.png" alt="Placeholder" />
+          {children}
         <AuthForm />
-      </div>
-      {children}
-    </div>  
+      </section>
+    </main>  
   )
 }
