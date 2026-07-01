@@ -1,22 +1,23 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Field } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 
 export default function AuthForm() {
   return (
-    <div className="flex flex-col items-center justify-center bg-background">
-      <Card className="w-full max-w-md">
+    <section className="flex flex-col gap-4 items-center justify-center w-full">
+      <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle>Auth Form</CardTitle>
+          <CardTitle>Create Account</CardTitle>
         </CardHeader>
         <CardContent>
             <form className="flex flex-col gap-4">
-                <input></input>
-                <button type="submit" className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark">
-                    Submit
-                </button>
+                <Input type="email" name="email" placeholder="Enter your email" />
+                <Input type="password" name="password" placeholder="Enter your password" />
+                <Button type="submit">Sign Up</Button>
             </form>
         </CardContent>
       </Card>
-    </div>
+    </section>
   )
 }

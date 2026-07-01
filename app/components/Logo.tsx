@@ -1,8 +1,8 @@
 
 export default function Logo() {
   return (
-    <h1 className="logo">
+    <a className="logo" href="/">
       Job Tracker
-    </h1>
+    </a>
   )
 }
