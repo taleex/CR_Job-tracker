@@ -39,4 +39,13 @@ model JobItem {
   updatedAt DateTime @updatedAt
   }
 
+  model Plan {
+    id Int @id @default(autoincrement())
+    name String
+    price Float
+    features String[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+  }
+
  
